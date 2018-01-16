@@ -1,0 +1,114 @@
+{
+    "rules": {
+      "adjacent-overload-signatures": true,
+      "class-name": true,
+      "no-reference": true,
+      "comment-format": [
+        false,
+        "check-space"
+      ],
+      "indent": [
+        true,
+        "spaces"
+      ],
+      "linebreak-style": [ true, "CRLF" ],
+      "one-line": [
+        true,
+        "check-open-brace",
+        "check-whitespace"
+      ],
+      "no-var-keyword": true,
+      "quotemark": [
+        true,
+        "single",
+        "avoid-escape"
+      ],
+      "semicolon": [ true, "ignore-bound-class-methods" ],
+      "whitespace": [
+        true,
+        "check-branch",
+        "check-decl",
+        "check-operator",
+        "check-module",
+        "check-separator",
+        "check-type"
+      ],
+      "typedef-whitespace": [
+        true,
+        {
+          "call-signature": "nospace",
+          "index-signature": "nospace",
+          "parameter": "nospace",
+          "property-declaration": "nospace",
+          "variable-declaration": "nospace"
+        },
+        {
+          "call-signature": "onespace",
+          "index-signature": "onespace",
+          "parameter": "onespace",
+          "property-declaration": "onespace",
+          "variable-declaration": "onespace"
+        }
+      ],
+      "no-internal-module": true,
+      "no-trailing-whitespace": true,
+      "no-null-keyword": true,
+      "switch-default": true,
+      "member-access": [ true ],
+      "prefer-const": true,
+      "member-ordering": [
+       true,
+       {
+         "order": [
+           "public-static-field",
+           "protected-static-field",
+           "private-static-field",
+           "public-instance-field",
+           "protected-instance-field",
+           "private-instance-field",
+           "constructor",
+           "public-static-method",
+           "protected-static-method",
+           "private-static-method",
+           "public-instance-method",
+           "protected-instance-method",
+           "private-instance-method"
+         ]
+       }
+              ],
+    "no-empty-interface":  true,
+    "no-inferrable-types": true,
+    "no-namespace": [ true, "allow-declarations" ],
+    "no-parameter-reassignment": true,
+    "no-unnecessary-type-assertion":  true,
+    "prefer-for-of": true,
+    "unified-signatures": true,
+    "curly": true,
+    "import-blacklist": true,
+    "no-arg": true,
+    "no-conditional-assignment": true,
+    "no-console": true,
+    "no-debugger": true,
+    "no-construct": true,
+    "no-duplicate-super": true,
+    "no-eval": true,
+    "no-invalid-template-strings": true,
+    "no-misused-new": true,
+    "no-object-literal-type-assertion": true,
+    "no-shadowed-variable": true,
+    "no-sparse-arrays": true,
+    "no-string-literal": true,
+    "no-string-throw":  true,
+    "no-switch-case-fall-through": true,
+    "no-unsafe-finally": true,
+    "no-unused-expression": [ true, "allow-fast-null-checks" ],
+    "no-unused-variable": [ true, "check-parameters"],
+    "prefer-conditional-expression": true,
+    "prefer-object-spread": true,
+    "radix": true,
+    "triple-equals": true,
+    "typeof-compare": true,
+    "use-default-type-parameter": true,
+    "use-isnan": true
+  }
+}
