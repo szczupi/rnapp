@@ -1,7 +1,7 @@
 import Home from './Home';
-import { DrawerNavigator, DrawerNavigatorConfig, NavigationRouteConfigMap, NavigationRouteConfig, DrawerItems, SafeAreaView } from 'react-navigation';
+import { DrawerNavigator, DrawerNavigatorConfig, NavigationRouteConfigMap, NavigationRouteConfig, DrawerItems, NavigationActions } from 'react-navigation';
 import Details from './Details';
-import {ScrollView, StyleSheet, View, Text} from 'react-native';
+import { ScrollView, StyleSheet, View, Text, Button } from 'react-native';
 import React from 'react';
 
 // const tabNavigatorScreenOptions: NavigationTabScreenOptions = {
@@ -29,28 +29,39 @@ const styles = StyleSheet.create({
   },
 });
 
-class DrawerContent extends React.Component<any> {  
-  
-  render(){
+class DrawerContent extends React.Component<any> {
+
+  public render() {
     return(
       <View style={{elevation: 10}}>
-        <View style={{height:200,backgroundColor:'#6ABFA0'}}>
-          <View style={{marginTop:50, alignItems:'center'}}>
-            <Text style={{fontSize:30,fontFamily:'futurapt-bold',color:'#fff'}}>
+        <View style={{height: 200, backgroundColor: '#6ABFA0'}}>
+          <View style={{marginTop: 50, alignItems: 'center'}}>
+            <Text style={{fontSize: 30, color: '#fff'}}>
               Daily Attendance
             </Text>
-            <Text style={{fontSize:50,fontFamily:'futurapt-book',color:'#fff'}}>
+            <Text style={{fontSize: 50, color: '#fff'}}>
               Sections
             </Text>
           </View>
         </View>
+        <View>
+              <Button onPress={this.navigateToScreen('Home')} title='press' />
+            </View>
           </View>
-    )
+    );
   }
+
+  private navigateToScreen = (route: any) => () => {
+    const navigateAction = NavigationActions.navigate({
+      routeName: route
+    });
+    this.props.navigation.navigate(route);
+  }
+
 }
 
 const drawerNavigatorConfig: DrawerNavigatorConfig = {
-  contentComponent: DrawerContent,
+  contentComponent: (props) => <DrawerContent {...props} />,
 };
 
 const routeConfigMap: NavigationRouteConfigMap = {
@@ -63,5 +74,5 @@ const routeConfigMap: NavigationRouteConfigMap = {
 };
 
 const RootNavigator = DrawerNavigator(routeConfigMap, drawerNavigatorConfig);
-  
-  export default RootNavigator;
+
+export default RootNavigator;

@@ -76,7 +76,6 @@
          ]
        }
               ],
-    "no-empty-interface":  true,
     "no-inferrable-types": true,
     "no-namespace": [ true, "allow-declarations" ],
     "no-parameter-reassignment": true,

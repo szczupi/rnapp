@@ -5,7 +5,7 @@ import { Text, View, StyleSheet } from 'react-native';
 
 export default class Details extends React.Component<any, any> {
 
-  static styles = StyleSheet.create({
+  private static styles = StyleSheet.create({
     icon: {
       width: 26,
       height: 26,
@@ -20,7 +20,7 @@ export default class Details extends React.Component<any, any> {
   //       />)
   // };
 
-    render() {
+   public render() {
       return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text>Details  Screen</Text>

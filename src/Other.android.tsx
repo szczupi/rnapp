@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, TextStyle, View, ViewStyle } from 'react-native';
- 
+
 interface Props {
 }
- 
+
 interface State {
 }
  
@@ -21,22 +21,65 @@ const styles = StyleSheet.create({
   } as TextStyle,
   instructions: {
     textAlign: 'center',
+
     color: '#333333',
+
     marginBottom: 5,
+
   } as TextStyle,
+
 });
- 
+
 export default class Other extends React.Component<Props, State> {
+
+
+
   render() {
+
+
+
     return (
+
+
+
       <View style={styles.container}>
+
+
+
         <Text style={styles.welcome}>
+
+
+
           Welcome to React Native!
+
+
+
         </Text>
+
+
+
         <Text style={styles.instructions}>
+
+
+
           {'To get started?'}
+
+
+
         </Text>
+
+
+
       </View>
+
+
+
     );
+
+
+
   }
+
+
+
 }
