@@ -1,20 +1,26 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import RootNavigator from './RootNavigator';
+import { Provider } from 'react-redux';
+import getStore from './store';
 
 interface Props {}
 
 interface State {}
 
+const store = getStore({});
+
 export default class App extends React.Component<Props, State> {
   public render() {
     return (
-      <View style = {styles.container}>
+      <Provider store={store}>
+       <View style = {styles.container}>
         <View style={{height: 24, backgroundColor: '#F7F7F7'}} />
         <View style={{flex: 1}}>
         <RootNavigator />
        </View>
-     </View>
+      </View>
+     </Provider>
     );
   }
 }
