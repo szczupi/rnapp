@@ -23,7 +23,11 @@
     },
     "exclude": [
       "build",
-      "node_modules"
+      "node_modules",
+      "typings"
+    ],
+    "typeRoots": [
+      "typings"
     ],
     "types": [
       "typePatches"
