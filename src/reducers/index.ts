@@ -1,6 +1,5 @@
 import { combineReducers } from 'redux';
+import IStore from '../stateModels/IStore';
+import { calendarReducer } from './calendarReducer';
 
-const AppReducer = combineReducers({
-});
-
-export default AppReducer;
+export default combineReducers({calendarReducer});

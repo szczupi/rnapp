@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import RootNavigator from './RootNavigator';
 import { Provider } from 'react-redux';
-import getStore from './store';
+import getStore from '../store';
 
 interface Props {}
 
