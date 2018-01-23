@@ -1,5 +1,6 @@
 import { ICalendar } from '../stateModels/ICalendar';
 import * as Actions from '../actions/calendarActions';
+import * as actionTypes from '../actions/actionTypes';
 
 function init(): ICalendar {
     return {
@@ -28,7 +29,7 @@ function init(): ICalendar {
 
 export const calendarReducer = (state: ICalendar = init(), action: Actions.Actions): ICalendar => {
     switch (action.type) {
-        case 'CHANGE_DAY': {
+        case actionTypes.DAY_CHANGE: {
             return {...state, ...{selectedDay: {date: action.payload, isFreeFriday: false, description: ''}}};
         }
         default: return state;

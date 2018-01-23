@@ -1,9 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Text, View, Button, StyleSheet } from 'react-native';
 import { CalendarList } from 'react-native-calendars';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { ICalendar, IHoliday } from '../stateModels/ICalendar';
+import { IHoliday } from '../stateModels/ICalendar';
 import IStore from '../stateModels/IStore';
 
 interface Props {
@@ -34,7 +33,7 @@ class MyCalendarComponent extends React.Component<Props, any> {
     const holidayDates: Array<IHoliday> =  calendar.dates;
     const dates: Array<Date> = holidayDates.map((holiday: IHoliday) => holiday.date);
     const props: any = dates.reduce((obj: any, item: Date) => {
-          obj[item.toISOString().substr(0,10)] = { selected: true, color: 'red' };
+          obj[item.toISOString().substr(0, 10)] = { selected: true, color: 'red' };
           return obj;
         }, {});
 
