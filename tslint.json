@@ -86,7 +86,6 @@
     "import-blacklist": true,
     "no-arg": true,
     "no-conditional-assignment": true,
-    "no-console": true,
     "no-debugger": true,
     "no-construct": true,
     "no-duplicate-super": true,
