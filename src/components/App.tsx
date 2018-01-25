@@ -3,6 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import RootNavigator from './RootNavigator';
 import { Provider } from 'react-redux';
 import getStore from '../store';
+import { calendarSetup } from '../logic/calendarSetup';
 
 interface Props {}
 
@@ -11,6 +12,7 @@ interface State {}
 const store = getStore({});
 
 export default class App extends React.Component<Props, State> {
+
   public render() {
     return (
       <Provider store={store}>
@@ -22,6 +24,10 @@ export default class App extends React.Component<Props, State> {
       </View>
      </Provider>
     );
+  }
+
+  public componentWillMount(): void {
+    calendarSetup();
   }
 }
 

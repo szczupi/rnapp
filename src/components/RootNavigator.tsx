@@ -3,10 +3,10 @@ import MyCalendar from './MyCalendar';
 import Notifications from './Notifications';
 
 const routeConfigMap: NavigationRouteConfigMap = {
-    ['Calendar'] : {
+    ['Kalendarz'] : {
       screen: MyCalendar
     },
-    ['Notifications']: {
+    ['Powiadomienia']: {
       screen: Notifications
     }
 };

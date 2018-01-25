@@ -1,6 +1,6 @@
 export interface ICalendar {
     dates: Array<IHoliday>;
-    selectedDay: IHoliday;
+    selectedDay: IHoliday | undefined;
 }
 
 

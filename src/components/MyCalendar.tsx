@@ -27,17 +27,19 @@ class MyCalendarComponent extends React.Component<Props, any> {
   };
 
     public render() {
+
+      if (this.props.dates.length === 0) {
+        return (<View>Loading...</View>);
+      }
+
       return (
         <View style={{flex: 1}}>
-        <CalendarList
-        markedDates={this.props.dates}
-        onDayPress = {(day: any) => this.props.onDayChange(day) }
-        //onDayPress={(day: any) => console.log('day pressed') }
-  // callback that gets called when day changes while scrolling agenda list
-  //onDayChange={(day: any) => { console.log('day changed'); } }
+        <View style={{flex: 7}}>
+        <CalendarList current={'2018-01-21'} markedDates={this.props.dates} onDayPress = {(day: any) => this.props.onDayChange(day) } markingType={'period'}
         />
-        <View style={{height: 50}}>
-        <Text style={{flex: 20}}>{this.props.selectedDay.date.toISOString()}</Text>
+        </View>
+        <View style={{flex: 1}}>
+        <Text style={{flex: 20}}>{this.props.selectedDay.date.toDateString()}</Text>
         <Text style={{flex: 20}}>{this.props.selectedDay.description}</Text>
         </View>
         </View>
@@ -49,10 +51,11 @@ const mapStateToProps = ({ calendar }: IStore, ownProps: Props): any => {
     const holidayDates: Array<IHoliday> =  calendar.dates;
     const datesArray: Array<Date> = holidayDates.map((holiday: IHoliday) => holiday.date);
     const dates: any = datesArray.reduce((obj: any, item: Date) => {
-          obj[item.toISOString().substr(0, 10)] = { selected: true, color: 'red' };
+          obj[item.toISOString().substr(0, 10)] = { selected: true, startingDay: true, color: 'red', endingDay: true };
           return obj;
         }, {});
 
+    dates[new Date().toISOString().substr(0, 10)] = { selected: true, startingDay: true, color: 'blue', endingDay: true };
     return { dates, selectedDay: calendar.selectedDay };
 };
 
