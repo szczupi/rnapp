@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import RootNavigator from './RootNavigator';
+import AppNavigation from './AppNavigation';
 import { Provider } from 'react-redux';
 import getStore from '../store';
 import { calendarSetup } from '../logic/calendarSetup';
@@ -19,7 +19,7 @@ export default class App extends React.Component<Props, State> {
        <View style = {styles.container}>
         <View style={{height: 24, backgroundColor: '#F7F7F7'}} />
         <View style={{flex: 1}}>
-        <RootNavigator />
+        <AppNavigation />
        </View>
       </View>
      </Provider>

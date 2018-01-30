@@ -6,6 +6,6 @@ export interface ICalendar {
 
 export interface IHoliday {
     date: Date;
-    isFreeFriday: boolean;
+    isHoliday: boolean;
     description: string;
 }

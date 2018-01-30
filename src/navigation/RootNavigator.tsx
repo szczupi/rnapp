@@ -1,6 +1,6 @@
 import { TabNavigator,  NavigationRouteConfigMap } from 'react-navigation';
-import MyCalendar from './MyCalendar';
-import Notifications from './Notifications';
+import MyCalendar from '../components/MyCalendar';
+import Notifications from '../components/Notifications';
 
 const routeConfigMap: NavigationRouteConfigMap = {
     ['Kalendarz'] : {

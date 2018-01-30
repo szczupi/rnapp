@@ -10,7 +10,7 @@ function init(): ICalendar {
     };
 }
 
-export const calendarReducer = (state: ICalendar = init(), action: Actions.Actions): ICalendar => {
+const calendarReducer = (state: ICalendar = init(), action: Actions.Actions): ICalendar => {
     switch (action.type) {
         case actionTypes.DAY_CHANGE: {
             return {...state, ...{ selectedDay: findHoliday(action.payload as Date, state.dates) }};
@@ -29,5 +29,7 @@ export const calendarReducer = (state: ICalendar = init(), action: Actions.Actio
 
 const findHoliday = (date: Date, holidays: Array<IHoliday>): IHoliday => {
     return holidays.find((holiday: IHoliday) => holiday.date.toDateString() === date.toDateString())
-    || {date: date, isFreeFriday: false, description: ''};
+    || {date: date, isHoliday: false, description: ''};
 };
+
+export default calendarReducer;
